@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars</title>
+
+    <style>
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+
+        heading  > h1 { 
+            display: inline-block;
+             }
+
+        button {
+            margin-left: 100px;
+        }
+     
+        table {
+            margin-top: 50px;
+        }
+
+    </style>
+    
+        <heading>
+            <h1>Mars spare parts ordering system</h1>
+            <button type="button">switch to dark mode</button>
+        </heading>
+    
+</head>
+
+<body>
+    <form action="Item" method="POST">
+        
+    <label for="Item ID">Item ID</label>
+        <input type="text" name="Item ID" id="patty"> 
+    <br> 
+
+    <label for="Quantity">Quantity</label> 
+        <input type="number" name="Quantity" id="Quantity">
+    <br> 
+
+    <label for="Urgent Delivery">Urgent Delivery</label> 
+        <input type="checkbox" name="Urgent delivery" id="Urgent delivery">
+    <br> 
+
+    <label for="Rover">Rover</label> 
+        <input type="text" list="rovers" name="rover" id="rover">
+        <datalist id="rovers">
+            <option value="Opportunity"></option>
+            <option value="Curiosity"></option>
+            <option value="Perseverance"></option>
+        </datalist>
+    <br> 
+
+        <input type="submit" name="submit" id="submit">
+    
+
+<table id="tabel">
+    <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Rover</th>
+          <th>Priority</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ITEM1</td>
+            <td>QUANTITY1</td>
+            <td>ROVER1</td>
+            <td>PRIORITY1</td>
+          </tr>
+    </tbody>
+
+</table>
+    
+<script>
+  const newRow() => {
+    document.getElementById("tabel").innerHTML = ""
+  }
+</script> 
+
+</body>
+</html>

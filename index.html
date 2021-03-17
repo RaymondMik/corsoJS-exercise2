@@ -12,7 +12,7 @@
           border-collapse: collapse;
         }
 
-        heading  > h1 { 
+        header > h1 { 
             display: inline-block;
              }
 
@@ -26,64 +26,82 @@
 
     </style>
     
-        <heading>
+        <header>
             <h1>Mars spare parts ordering system</h1>
             <button type="button">switch to dark mode</button>
-        </heading>
+        </header>
     
 </head>
 
 <body>
-    <form action="Item" method="POST">
-        
-    <label for="Item ID">Item ID</label>
-        <input type="text" name="Item ID" id="patty"> 
-    <br> 
+    <form action="Item" method="POST" id="mars-form">
+        <label for="Item ID">Item ID</label>
+            <input type="text" name="Item ID" id="item"> 
+        <br> 
 
-    <label for="Quantity">Quantity</label> 
-        <input type="number" name="Quantity" id="Quantity">
-    <br> 
+        <label for="Quantity">Quantity</label> 
+            <input type="number" name="Quantity" id="quantity">
+        <br> 
 
-    <label for="Urgent Delivery">Urgent Delivery</label> 
-        <input type="checkbox" name="Urgent delivery" id="Urgent delivery">
-    <br> 
+        <label for="Urgent Delivery">Urgent Delivery</label> 
+            <input type="checkbox" name="Urgent delivery" id="urgent_delivery">
+        <br> 
 
-    <label for="Rover">Rover</label> 
-        <input type="text" list="rovers" name="rover" id="rover">
-        <datalist id="rovers">
-            <option value="Opportunity"></option>
-            <option value="Curiosity"></option>
-            <option value="Perseverance"></option>
-        </datalist>
-    <br> 
+        <label for="Rover">Rover</label> 
+            <input type="text" list="rovers" name="rover" id="rover">
+            <datalist id="rovers">
+                <option value="Opportunity"></option>
+                <option value="Curiosity"></option>
+                <option value="Perseverance"></option>
+            </datalist>
+        <br> 
 
         <input type="submit" name="submit" id="submit">
+    </form>
     
 
-<table id="tabel">
-    <thead>
-        <tr>
-          <th>Item</th>
-          <th>Quantity</th>
-          <th>Rover</th>
-          <th>Priority</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ITEM1</td>
-            <td>QUANTITY1</td>
-            <td>ROVER1</td>
-            <td>PRIORITY1</td>
-          </tr>
-    </tbody>
-
-</table>
+    <table id="tabel">
+        <thead>
+            <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Rover</th>
+            <th>Priority</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ITEM1</td>
+                <td>QUANTITY1</td>
+                <td>ROVER1</td>
+                <td>PRIORITY1</td>
+            </tr>
+        </tbody>
+    </table>
     
 <script>
-  const newRow() => {
-    document.getElementById("tabel").innerHTML = ""
-  }
+    const marsForm = document.querySelector("#mars-form");
+
+    function onSubmit(event) {
+        event.preventDefault();
+
+        const tableBody = document.querySelector("tbody");
+
+        // usa document.querySelector per selezionare il valore di item inserito nel form
+        const item = "#12312433243j32";
+         // usa document.querySelector per selezionare il valore di quantity inserito nel form
+        const quantity = "1";
+         // usa document.querySelector per selezionare il valore di urgent_delivery inserito nel form
+        const urgentDelivery = true;
+         // usa document.querySelector per selezionare il valore di rover inserito nel form
+        const rover = "Opportunity";
+
+        tableBody.innerHTML = tableBody.innerHTML + `<tr><td>${item}</td><td>${quantity}</td><td>${urgentDelivery}</td><td>${rover}</td></tr>`;
+
+        studentsForm.reset();
+    }
+
+    marsForm.addEventListener("submit", onSubmit);
 </script> 
 
 </body>

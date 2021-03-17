@@ -1,0 +1,1 @@
+Link alla descrizione dell'esercizio su Google Classroom <a href="https://classroom.google.com/c/MjUxMjE1NzEzNTU4/a/Mjc4MzYwNDI4NTcz/details" target="_blank">https://classroom.google.com/c/MjUxMjE1NzEzNTU4/a/Mjc4MzYwNDI4NTcz/details</a>
